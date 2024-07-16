@@ -1,0 +1,180 @@
+
+
+<div class="bg-[#b8e2f4] h-screen flex justify-center items-center p-14">
+
+  <section class="relative bg-gray-800  p-4 border-1 rounded-xl"> <!--#0835AD-->
+
+    <form class=" flex flex-col items-stretch p-5" [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+
+      <h2 class="text-white text-center mb-5 font-bold text-2xl">REGISTRO</h2>
+
+      <div *ngIf="showSuccessMessage" class=" bg-cyan-400 w-72 h-24 text-center text-white p-4 text-xl rounded mb-4 animate-fade-in absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50" >
+        ¡Formulario enviado con éxito!
+      </div>
+
+      <label class="text-balance block mb-4 font-medium text-sm   " for="personType">
+
+        <select class="bg-gray-800 border border-slate-500  text-gray-100  text-sm font-medium rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" name="personType" id="personType" formControlName="personType"
+          required>
+
+          <option value="">Tipo de Persona</option>
+          <option value="natural">Natural</option>
+          <option value="juridica">Juridica</option>
+        </select>
+
+        <div *ngIf="submitted && getInvalidFields()['personType']" class="text-red-500 mt-1  text-xs">
+          Campo Requerido.
+        </div>
+
+      </label>
+
+      <label class="block mb-4 font-medium text-sm " for="documentType">
+
+        <select class="bg-gray-800 border border-slate-500   text-gray-100  text-sm font-medium rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" name="documentType" id="documentType"
+          formControlName="documentType" required>
+
+          <option value="">Tipo Documento</option>
+          <option value="cc">CC</option>
+          <option value="ce">CE</option>
+          <option value="pas">Pas</option>
+          <option value="nit">Nit</option>
+
+        </select>
+
+        <div *ngIf="submitted && getInvalidFields()['documentType']" class="text-red-500 mt-1  text-xs">
+          Tipo de Documento Requerido.
+        </div>
+
+      </label>
+
+      <div class="relative">
+        
+        <input 
+          class="mb-4 px-2.5 pb-1.5 pt-4 w-full text-sm text-gray-100  border border-slate-500   font-medium bg-transparent rounded-lg appearance-none dark:text-black dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+          type="text" id="identificationNumber" formControlName="identificationNumber" placeholder="" required>
+
+        <label for="identificationNumber" 
+          class="absolute text-sm text-gray-300 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-800 px-2 peer-focus:px-2 peer-focus:dark:text-zinc-400 peer-placeholder-shown:scale-110 peer-placeholder-shown:top-8 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">N° 
+          Identificación</label>
+        
+          <div *ngIf="submitted && getInvalidFields()['identificationNumber']" class="text-red-500  -mt-3 mb-4 text-xs">
+            El N° de Identificación es requerido.
+          </div>
+
+      </div>
+
+      <div class="relative">
+      <input
+        class="mb-4 px-2.5 pb-1.5 pt-4 w-full text-sm text-gray-100  font-medium bg-transparent rounded-lg border border-slate-500   appearance-none dark:text-black dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        type="text" name="name" id="name" formControlName="name"  placeholder="" required>
+
+        <label for="name"
+          class="absolute text-sm text-gray-300 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-800 px-2 peer-focus:px-2 peer-focus:dark:text-zinc-400 peer-placeholder-shown:scale-110 peer-placeholder-shown:top-8 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Nombre Completo
+        </label>
+
+        <div *ngIf="submitted && getInvalidFields()['name']" class="text-red-500 -mt-3 mb-4 text-xs">
+          Nombre Requerido.
+        </div>
+
+      </div>
+
+      <div class="relative">
+      <input
+        class="mb-4 px-2.5 pb-1.5 pt-4 w-full text-sm text-gray-100 font-medium bg-transparent rounded-lg border border-slate-500   appearance-none dark:text-black dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        type="email" name="email" id="email" formControlName="email" placeholder="" required>
+
+        <label for="email"
+          class="absolute text-sm text-gray-300 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-800 px-2 peer-focus:px-2 peer-focus:dark:text-zinc-400 peer-placeholder-shown:scale-110 peer-placeholder-shown:top-8 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Correo
+        </label>
+
+        <div *ngIf="submitted && getInvalidFields()['email']" class="text-red-500 -mt-3 mb-4 text-xs">
+          no es un correo valido
+        </div>
+
+      </div>
+
+      <div class="relative">
+      <input
+        class="mb-4 px-2.5 pb-1.5 pt-4 w-full text-sm text-gray-100 bg-transparent rounded-lg border border-slate-500   appearance-none dark:text-black dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        type="password" name="password" id="password" formControlName="password" placeholder=""
+        required>
+
+        <label for="password"
+          class="absolute text-sm text-gray-300 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-800 px-2 peer-focus:px-2 peer-focus:dark:text-zinc-400 peer-placeholder-shown:scale-110 peer-placeholder-shown:top-8 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Contraseña
+        </label>
+
+        <div *ngIf="registerForm.get('password')?.invalid && (registerForm.get('password')?.dirty || registerForm.get('password')?.touched)" class="text-red-500 -mt-3 mb-4 text-xs">
+          longitud minima de 8 caracteres
+        </div>
+
+      </div>
+
+      <div class="relative">
+      <input
+        class="mb-4 px-2.5 pb-1.5 pt-4 w-full text-sm text-gray-100 font-medium bg-transparent rounded-lg border border-slate-500   appearance-none dark:text-black dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        type="text" name="businessName" id="businessName" formControlName="businessName"
+        placeholder="">
+
+        <label for="businessName"
+          class="absolute text-sm text-gray-300 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-gray-800 px-2 peer-focus:px-2 peer-focus:dark:text-zinc-400 peer-placeholder-shown:scale-110 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Razón Social (si aplica)</label>
+      </div>
+
+      <label class="block mb-4 font-medium text-sm  text-gray-900" for="company">
+
+        <select class="bg-gray-800 border border-slate-500    text-gray-100 text-sm font-medium rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" name="company" id="company" formControlName="company" required>
+
+          <option value="">Tipo Empresa</option>
+
+          <option value="pequeña">Pequeña</option>
+
+          <option value="mediana">Mediana</option>
+
+          <option value="grande">Grande</option>
+
+          <option value="otros">Otros</option>
+
+        </select>
+
+        <div *ngIf="submitted && getInvalidFields()['company']" class="text-red-500 mt-1  text-xs">
+          Campo requerido
+        </div>
+
+      </label>
+
+      <label class="block mb-4 font-medium text-sm" for="sector">
+
+        <select class="bg-gray-800 border border-slate-500   text-gray-100 text-sm font-medium rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:placeholder-gray-400 dark:text-black dark:focus:ring-blue-500 dark:focus:border-blue-500" name="sector" id="sector" formControlName="sector" required>
+
+          <option value="">Sector</option>
+
+          <option value="servicios">Servicios</option>
+
+          <option value="comercio">Comercio</option>
+
+          <option value="industria">Industria</option>
+
+          <option value="otros">Otros</option>
+
+        </select>
+
+        <div *ngIf="submitted && getInvalidFields()['sector']" class="text-red-500 mt-1  text-xs">
+          Campo requerido
+        </div>
+
+      </label><br>
+
+     
+
+      <div class="flex justify-between gap-12">
+
+        <button class="bg-orange-500 rounded-md w-28 p-1 hover:bg-cyan-700" type="reset"> Limpiar </button>
+
+        <button class="bg-cyan-500 rounded-md w-28 p-1 hover:bg-cyan-700" type="submit"> Enviar </button>
+
+      </div>
+
+    </form>
+
+  </section>
+
+</div>

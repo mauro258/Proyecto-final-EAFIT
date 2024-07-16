@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import path from 'path';
+import { RegisterComponent } from './shared/components/register/register.component';
 
 export const routes: Routes = [
   {
@@ -25,8 +26,16 @@ export const routes: Routes = [
       },
     ],
   },
+  /*
   {
     path: '**',
     redirectTo: 'dashboard',
-  },
+  },  */
+  {
+    path: 'register',
+    component: RegisterComponent
+  }
+  
 ];
+
+

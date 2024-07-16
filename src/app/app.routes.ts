@@ -5,8 +5,8 @@ import { LoginComponent } from './business/login/login.component';
 import DashboardComponent from './business/dashboard/dashboard.component';
 import ProfileComponent from './business/profile/profile.component';
 import TablesComponent from './business/tables/tables.component';
-import { LandingPagueComponent } from './business/landing-pague/landing-pague.component';
 import LayoutComponent from './shared/components/layout/layout.component';
+import { LandingpageComponent } from './business/landing-page/landing-page.component';
 
 export const routes: Routes = [
   {
@@ -14,8 +14,8 @@ export const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'landing-pague',
-    component: LandingPagueComponent
+    path: 'landing-page',
+    component: LandingpageComponent
   },
   {
     path: '',

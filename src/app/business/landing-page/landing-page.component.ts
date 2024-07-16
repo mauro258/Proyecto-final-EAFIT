@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../../shared/components/header/header.component';
 
 @Component({
-  selector: 'app-landing-pague',
+  selector: 'app-landing-page',
   standalone: true,
   imports: [HeaderComponent],
-  templateUrl: './landing-pague.component.html',
-  styleUrl: './landing-pague.component.css'
+  templateUrl: './landing-page.component.html',
+  styleUrl: './landing-page.component.css'
 })
-export class LandingPagueComponent {
+export class LandingpageComponent {
 
 }

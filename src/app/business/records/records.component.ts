@@ -4,8 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-tables',
   standalone: true,
   imports: [],
-  templateUrl: './tables.component.html',
-  styleUrl: './tables.component.css'
+  templateUrl: './records.component.html',
+  styleUrl: './records.component.css'
 })
 export default class TablesComponent {
 

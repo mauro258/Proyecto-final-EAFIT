@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
-
+import { Router } from '@angular/router';
  
 @Component({
   selector: 'app-register',
@@ -9,8 +9,12 @@ import { FormGroup, FormControl, ReactiveFormsModule, Validators } from '@angula
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
+  
 })
+
 export class RegisterComponent {
+  constructor(private router: Router) {}
+
   registerForm = new FormGroup({
     personType: new FormControl('', Validators.required),
     documentType: new FormControl('' , Validators.required),
@@ -34,10 +38,14 @@ export class RegisterComponent {
     }
     console.log(this.registerForm.value);
     this.showSuccessMessage = true;
+
     setTimeout(() => {
       this.showSuccessMessage = false;
-    }, 4000); 
-    this.resetForm();
+      this.resetForm();
+      this.submitted = false;
+      this.router.navigate(['/dashboard']);
+    }, 2000); 
+    
     
   }
 

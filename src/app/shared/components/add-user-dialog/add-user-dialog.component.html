@@ -1,0 +1,56 @@
+<!-- components/add-user-dialog/add-user-dialog.component.html -->
+<div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+    <div class="bg-dark-blue rounded-lg shadow-lg p-6 w-96">
+      <h1 class="text-2xl font-bold mb-4 text-white">Agregar Usuario</h1>
+      <form>
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-white">Nombre</label>
+          <input
+            type="text"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-white">Correo</label>
+          <input
+            type="email"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-white">Rol</label>
+          <input
+            type="text"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          />
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-white">Estado</label>
+          <select
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          >
+            <option value="" disabled selected>Seleccionar</option>
+            <option value="activo">Activo</option>
+            <option value="inactivo">Inactivo</option>
+          </select>
+        </div>
+        <div class="mb-4">
+          <label class="block text-sm font-medium text-white">Vencimiento</label>
+          <input
+            type="date"
+            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
+          />
+        </div>
+      </form>
+      <div class="flex justify-end mt-6">
+        <button
+          class="bg-gray-500 text-white px-4 py-2 rounded mr-2"
+          (click)="onCancel()"
+        >
+          Cancelar
+        </button>
+        <button class="bg-blue-500 text-white px-4 py-2 rounded">Guardar</button>
+      </div>
+    </div>
+  </div>
+  

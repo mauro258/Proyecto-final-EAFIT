@@ -14,6 +14,7 @@ import { HeaderComponent } from '../header/header.component';
 })
 
 export class RegisterComponent {
+  
   constructor(private router: Router) {}
 
   registerForm = new FormGroup({

@@ -5,11 +5,12 @@ import { fileURLToPath } from 'node:url';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive],
+  imports: [RouterLink, RouterLinkActive, ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
   constructor(private router: Router) { }
 title = (this.router.url).slice(1)
+
 }

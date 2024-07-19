@@ -10,89 +10,69 @@
   <thead>
     <tr>
       <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-        <p
-          class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400"
-        >
+        <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">
           NOMBRE
         </p>
       </th>
       <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-        <p
-          class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400"
-        >
+        <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">
           ROLES
         </p>
       </th>
       <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-        <p
-          class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400"
-        >
+        <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">
           ESTADO
         </p>
       </th>
       <th class="border-b border-blue-gray-50 py-3 px-6 text-left">
-        <p
-          class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400"
-        >
+        <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">
           VENCIMIENTO
         </p>
       </th>
       <th class="border-b border-blue-gray-50 py-3 px-1 text-left">
-        <p
-          class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400"
-        >
+        <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">
           EDITAR
         </p>
       </th>
       <th class="border-b border-blue-gray-50 py-3 px-1 text-left">
-        <p
-          class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400"
-        >
+        <p class="block antialiased font-sans text-[11px] font-medium uppercase text-blue-gray-400">
           ELIMINAR
         </p>
       </th>
     </tr>
   </thead>
   <tbody>
-    <tr>
+    <tr *ngFor="let user of users">
       <td class="py-3 px-5 border-b border-blue-gray-50">
         <div class="flex items-center gap-4">
-          <p
-            class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold"
-          >
-            Mauricio Henao
+          <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold">
+            {{user.nombre}}
           </p>
         </div>
       </td>
       <td class="py-3 px-5 border-b border-blue-gray-50">
         <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            Administrador
+          <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">
+            {{user.roles}}
           </p>
         </div>
       </td>
-
       <td class="py-3 px-5 border-b border-blue-gray-50">
-        <p
-          class="block antialiased font-sans text-xs font-medium text-green-600"
-        >
-          Activo
+        <p class="block antialiased font-sans text-xs font-medium" [ngClass]="{'text-green-600': user.estado === 'Activo', 'text-red-600': user.estado === 'Inactivo'}">
+          {{user.estado}}
         </p>
       </td>
       <td class="py-3 px-5 border-b border-blue-gray-50">
         <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            14/06/2030
+          <p class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600">
+            {{user.vencimiento}}
           </p>
         </div>
       </td>
       <td class="py-3 px-1 border-b border-blue-gray-50">
         <button
           class="block antialiased font-sans text-xs font-medium text-white bg-yellow-400 hover:bg-yellow-600 rounded px-3 py-2"
+          (click)="openEditUserDialog(user)"
         >
           <i class="fas fa-edit"></i>
         </button>
@@ -100,300 +80,7 @@
       <td class="py-3 px-1 border-b border-blue-gray-50">
         <button
           class="block antialiased font-sans text-xs font-medium text-white bg-red-400 hover:bg-red-600 rounded px-3 py-2"
-        >
-          <i class="fas fa-trash"></i>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="flex items-center gap-4">
-          <p
-            class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold"
-          >
-            Veronica Sierra
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            Administrador
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <p
-          class="block antialiased font-sans text-xs font-medium text-green-600"
-        >
-          Activo
-        </p>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            25/03/2050
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-1 border-b border-blue-gray-50">
-        <button
-          class="block antialiased font-sans text-xs font-medium text-white bg-yellow-400 hover:bg-yellow-600 rounded px-3 py-2"
-        >
-          <i class="fas fa-edit"></i>
-        </button>
-      </td>
-      <td class="py-3 px-1 border-b border-blue-gray-50">
-        <button
-          class="block antialiased font-sans text-xs font-medium text-white bg-red-400 hover:bg-red-600 rounded px-3 py-2"
-        >
-          <i class="fas fa-trash"></i>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="flex items-center gap-4">
-          <p
-            class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold"
-          >
-            David Zapata
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            Asesor
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <p class="block antialiased font-sans text-xs font-medium text-red-600">
-          Inactivo
-        </p>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            22/05/2022
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-1 border-b border-blue-gray-50">
-        <button
-          class="block antialiased font-sans text-xs font-medium text-white bg-yellow-400 hover:bg-yellow-600 rounded px-3 py-2"
-        >
-          <i class="fas fa-edit"></i>
-        </button>
-      </td>
-      <td class="py-3 px-1 border-b border-blue-gray-50">
-        <button
-          class="block antialiased font-sans text-xs font-medium text-white bg-red-400 hover:bg-red-600 rounded px-3 py-2"
-        >
-          <i class="fas fa-trash"></i>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="flex items-center gap-4">
-          <p
-            class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold"
-          >
-            Santiago Yosa
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            Administrador
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <p
-          class="block antialiased font-sans text-xs font-medium text-green-600"
-        >
-          Activo
-        </p>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            10/09/2040
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-1 border-b border-blue-gray-50">
-        <button
-          class="block antialiased font-sans text-xs font-medium text-white bg-yellow-400 hover:bg-yellow-600 rounded px-3 py-2"
-        >
-          <i class="fas fa-edit"></i>
-        </button>
-      </td>
-      <td class="py-3 px-1 border-b border-blue-gray-50">
-        <button
-          class="block antialiased font-sans text-xs font-medium text-white bg-red-400 hover:bg-red-600 rounded px-3 py-2"
-        >
-          <i class="fas fa-trash"></i>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="flex items-center gap-4">
-          <p
-            class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold"
-          >
-            Javier Garcia
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            Administrador
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <p
-          class="block antialiased font-sans text-xs font-medium text-green-600"
-        >
-          Activo
-        </p>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            01/01/2025
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-1 border-b border-blue-gray-50">
-        <button
-          class="block antialiased font-sans text-xs font-medium text-white bg-yellow-400 hover:bg-yellow-600 rounded px-3 py-2"
-        >
-          <i class="fas fa-edit"></i>
-        </button>
-      </td>
-      <td class="py-3 px-1 border-b border-blue-gray-50">
-        <button
-          class="block antialiased font-sans text-xs font-medium text-white bg-red-400 hover:bg-red-600 rounded px-3 py-2"
-        >
-          <i class="fas fa-trash"></i>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="flex items-center gap-4">
-          <p
-            class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold"
-          >
-            Jose Rodriguez
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            Asesor
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <p class="block antialiased font-sans text-xs font-medium text-red-600">
-          Inactivo
-        </p>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            15/07/2024
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-1 border-b border-blue-gray-50">
-        <button
-          class="block antialiased font-sans text-xs font-medium text-white bg-yellow-400 hover:bg-yellow-600 rounded px-3 py-2"
-        >
-          <i class="fas fa-edit"></i>
-        </button>
-      </td>
-      <td class="py-3 px-1 border-b border-blue-gray-50">
-        <button
-          class="block antialiased font-sans text-xs font-medium text-white bg-red-400 hover:bg-red-600 rounded px-3 py-2"
-        >
-          <i class="fas fa-trash"></i>
-        </button>
-      </td>
-    </tr>
-    <tr>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="flex items-center gap-4">
-          <p
-            class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-bold"
-          >
-            Karol Herrera
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            Asesor
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <p class="block antialiased font-sans text-xs font-medium text-red-600">
-          Inactivo
-        </p>
-      </td>
-      <td class="py-3 px-5 border-b border-blue-gray-50">
-        <div class="w-10/12">
-          <p
-            class="antialiased font-sans mb-1 block text-xs font-medium text-blue-gray-600"
-          >
-            02/02/2024
-          </p>
-        </div>
-      </td>
-      <td class="py-3 px-1 border-b border-blue-gray-50">
-        <button
-          class="block antialiased font-sans text-xs font-medium text-white bg-yellow-400 hover:bg-yellow-600 rounded px-3 py-2"
-        >
-          <i class="fas fa-edit"></i>
-        </button>
-      </td>
-      <td class="py-3 px-1 border-b border-blue-gray-50">
-        <button
-          class="block antialiased font-sans text-xs font-medium text-white bg-red-400 hover:bg-red-600 rounded px-3 py-2"
+          (click)="deleteUser(user)"
         >
           <i class="fas fa-trash"></i>
         </button>

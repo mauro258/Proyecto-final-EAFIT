@@ -22,6 +22,10 @@ export const routes: Routes = [
     component: LandingpageComponent
   },
   {
+    path: 'register',
+    component: RegisterComponent
+  },
+  {
     path: '',
     component:LayoutComponent,
     children: [
@@ -39,15 +43,12 @@ export const routes: Routes = [
       },
     ],
   },
-  /*
+  
   {
     path: '**',
     redirectTo: 'dashboard',
-  },  */
-  {
-    path: 'register',
-    component: RegisterComponent
-  }
+  },  
+ 
   
 ];
 

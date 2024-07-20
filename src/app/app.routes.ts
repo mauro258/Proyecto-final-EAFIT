@@ -1,8 +1,6 @@
 import { Routes } from '@angular/router';
 import path from 'path';
-
 import { RegisterComponent } from './shared/components/register/register.component';
-
 import { Component } from '@angular/core';
 import { LoginComponent } from './business/login/login.component';
 import DashboardComponent from './business/dashboard/dashboard.component';

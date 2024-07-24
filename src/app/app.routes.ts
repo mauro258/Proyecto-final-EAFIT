@@ -8,6 +8,7 @@ import ProfileComponent from './business/profile/profile.component';
 import TablesComponent from './business/records/records.component';
 import LayoutComponent from './shared/components/layout/layout.component';
 import { LandingpageComponent } from './business/landing-page/landing-page.component';
+import { ClientPortalComponent } from './business/client/client-portal/client-portal.component';
 
 
 export const routes: Routes = [
@@ -22,6 +23,10 @@ export const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'client-portal',
+    component: ClientPortalComponent
   },
   {
     path: '',

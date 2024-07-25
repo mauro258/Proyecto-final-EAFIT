@@ -10,11 +10,9 @@ import { HeaderComponent } from '../header/header.component';
   imports: [ReactiveFormsModule, CommonModule, HeaderComponent],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
-  
 })
 
 export class RegisterComponent {
-  
   constructor(private router: Router) {}
 
   registerForm = new FormGroup({

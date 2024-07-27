@@ -43,7 +43,7 @@ export class RegisterComponent {
       this.showSuccessMessage = false;
       this.resetForm();
       this.submitted = false;
-      this.router.navigate(['/dashboard']);
+      this.router.navigate(['/client-portal']);
     }, 2000); 
     
     

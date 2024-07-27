@@ -1,0 +1,81 @@
+{
+  "users": [
+    {
+      "personType": "natural",
+      "documentType": "cc",
+      "identificationNumber": "123456789",
+      "fullName": "Juan Pérez",
+      "email": "juan.perez@example.com",
+      "password": "password123",
+      "businessName": "",
+      "companyType": "pequeña",
+      "sector": "servicios"
+    },
+    {
+      "personType": "jurídica",
+      "documentType": "nit",
+      "identificationNumber": "900123456-7",
+      "fullName": "Compañía XYZ S.A.S.",
+      "email": "contacto@xyz.com",
+      "password": "securePass456",
+      "businessName": "Compañía XYZ S.A.S.",
+      "companyType": "mediana",
+      "sector": "comercio"
+    },
+    {
+      "personType": "natural",
+      "documentType": "ce",
+      "identificationNumber": "987654321",
+      "fullName": "María Gómez",
+      "email": "maria.gomez@example.com",
+      "password": "mypassword789",
+      "businessName": "",
+      "companyType": "grande",
+      "sector": "industria"
+    },
+    {
+      "personType": "jurídica",
+      "documentType": "pas",
+      "identificationNumber": "A123456789",
+      "fullName": "Servicios Globales S.A.",
+      "email": "info@serviciosglobales.com",
+      "password": "pass1234",
+      "businessName": "Servicios Globales S.A.",
+      "companyType": "otros",
+      "sector": "servicios"
+    },
+    {
+      "personType": "natural",
+      "documentType": "cc",
+      "identificationNumber": "321654987",
+      "fullName": "Carlos López",
+      "email": "carlos.lopez@example.com",
+      "password": "12345678",
+      "businessName": "",
+      "companyType": "pequeña",
+      "sector": "comercio"
+    },
+    {
+      "personType": "natural",
+      "documentType": "cc",
+      "identificationNumber": "987654321",
+      "fullName": "Admin User",
+      "email": "admin@example.com",
+      "password": "1234",
+      "businessName": "",
+      "companyType": "otros",
+      "sector": "otros"
+    },
+    {
+      "personType": "natural",
+      "documentType": "cc",
+      "identificationNumber": "654987321",
+      "fullName": "Asesor User",
+      "email": "asesor@example.com",
+      "password": "1234",
+      "businessName": "",
+      "companyType": "otros",
+      "sector": "otros"
+    }
+  ]
+}

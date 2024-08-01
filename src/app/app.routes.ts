@@ -7,6 +7,7 @@ import TablesComponent from './business/records/records.component';
 import LayoutComponent from './shared/components/layout/layout.component';
 import { LandingpageComponent } from './business/landing-page/landing-page.component';
 import { ClientPortalComponent } from './business/client/client-portal/client-portal.component';
+import { ClientFormComponent } from './business/client/client-form/client-form.component';
 
 export const routes: Routes = [
   {
@@ -24,6 +25,10 @@ export const routes: Routes = [
   {
     path: 'client-portal',
     component: ClientPortalComponent
+  },
+  {
+    path: 'client-form',
+    component: ClientFormComponent,
   },
   {
     path: '',

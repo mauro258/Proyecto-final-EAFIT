@@ -1,0 +1,190 @@
+<app-client-sidebar />
+<div class="max-w-full xl:ml-80 p-3">
+    <app-header/>
+</div>
+
+<body ng-controller="FormController">
+    <div class="max-w-full xl:ml-80 p-3">
+        <div class="banner">
+            <img src="https://i.ibb.co/Tbx0M4p/Captura-de-pantalla-2024-07-24-095136.png" alt="Banner Image">
+        </div>
+        <div class="container">
+            <h1>Encuesta diagnóstica Estramypyme</h1>
+            <form name="exampleForm" ng-submit="submitForm()">
+                <div class="form-group">
+                    <label for="business-description">¿Qué hace el negocio?</label>
+                    <textarea id="business-description" ng-model="formData.businessDescription" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="business-differentiation">¿Cómo lo hace?</label>
+                    <textarea id="business-differentiation" ng-model="formData.businessDifferentiation" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="business-purpose">¿Por qué lo hace?</label>
+                    <textarea id="business-purpose" ng-model="formData.businessPurpose" required></textarea>
+                </div>
+                <div class="form-group">
+                    <h2>Recursos Tangibles</h2>
+                    <label>Tangibles:</label>
+                    <div>
+                        <label>¿Tiene recursos tangibles?</label>
+                        <select ng-model="formData.tangibles" required>
+                            <option value="">Seleccione</option>
+                            <option value="yes">Sí</option>
+                            <option value="no">No</option>
+                        </select>
+                    </div>
+                    <div ng-if="formData.tangibles === 'yes'">
+                        <label>Financieros:</label>
+                        <div>
+                            <label>¿Tiene recursos financieros?</label>
+                            <select ng-model="formData.financialResources" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div ng-if="formData.financialResources === 'yes'">
+                            <h3>Caja</h3>
+                            <label>Valioso:</label>
+                            <select ng-model="formData.vrio.financial.cash.valuable" ng-change="updateVRIO('financial', 'cash')" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                            <label>Raro:</label>
+                            <select ng-model="formData.vrio.financial.cash.rare" ng-change="updateVRIO('financial', 'cash')" ng-disabled="formData.vrio.financial.cash.valuable === 'no'" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                            <label>Inimitable:</label>
+                            <select ng-model="formData.vrio.financial.cash.inimitable" ng-change="updateVRIO('financial', 'cash')" ng-disabled="formData.vrio.financial.cash.rare === 'no'" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                            <label>Organizado:</label>
+                            <select ng-model="formData.vrio.financial.cash.organized" ng-change="updateVRIO('financial', 'cash')" ng-disabled="formData.vrio.financial.cash.inimitable === 'no'" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                        </div>
+                        <div ng-if="formData.financialResources === 'yes'">
+                            <h3>Capacidad de Endeudamiento</h3>
+                            <label>Valioso:</label>
+                            <select ng-model="formData.vrio.financial.debtCapacity.valuable" ng-change="updateVRIO('financial', 'debtCapacity')" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                            <label>Raro:</label>
+                            <select ng-model="formData.vrio.financial.debtCapacity.rare" ng-change="updateVRIO('financial', 'debtCapacity')" ng-disabled="formData.vrio.financial.debtCapacity.valuable === 'no'" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                            <label>Inimitable:</label>
+                            <select ng-model="formData.vrio.financial.debtCapacity.inimitable" ng-change="updateVRIO('financial', 'debtCapacity')" ng-disabled="formData.vrio.financial.debtCapacity.rare === 'no'" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                            <label>Organizado:</label>
+                            <select ng-model="formData.vrio.financial.debtCapacity.organized" ng-change="updateVRIO('financial', 'debtCapacity')" ng-disabled="formData.vrio.financial.debtCapacity.inimitable === 'no'" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                        </div>
+                        <label>Físicos:</label>
+                        <div>
+                            <label>¿Tiene recursos físicos?</label>
+                            <select ng-model="formData.physicalResources" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div ng-if="formData.physicalResources === 'yes'">
+                            <h3>Ubicación</h3>
+                            <label>Valioso:</label>
+                            <select ng-model="formData.vrio.physical.location.valuable" ng-change="updateVRIO('physical', 'location')" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                            <label>Raro:</label>
+                            <select ng-model="formData.vrio.physical.location.rare" ng-change="updateVRIO('physical', 'location')" ng-disabled="formData.vrio.physical.location.valuable === 'no'" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                            <label>Inimitable:</label>
+                            <select ng-model="formData.vrio.physical.location.inimitable" ng-change="updateVRIO('physical', 'location')" ng-disabled="formData.vrio.physical.location.rare === 'no'" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                            <label>Organizado:</label>
+                            <select ng-model="formData.vrio.physical.location.organized" ng-change="updateVRIO('physical', 'location')" ng-disabled="formData.vrio.physical.location.inimitable === 'no'" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                        </div>
+                        <div ng-if="formData.physicalResources === 'yes'">
+                            <h3>Planta y Equipo</h3>
+                            <label>Valioso:</label>
+                            <select ng-model="formData.vrio.physical.plantEquipment.valuable" ng-change="updateVRIO('physical', 'plantEquipment')" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                            <label>Raro:</label>
+                            <select ng-model="formData.vrio.physical.plantEquipment.rare" ng-change="updateVRIO('physical', 'plantEquipment')" ng-disabled="formData.vrio.physical.plantEquipment.valuable === 'no'" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                            <label>Inimitable:</label>
+                            <select ng-model="formData.vrio.physical.plantEquipment.inimitable" ng-change="updateVRIO('physical', 'plantEquipment')" ng-disabled="formData.vrio.physical.plantEquipment.rare === 'no'" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                            <label>Organizado:</label>
+                            <select ng-model="formData.vrio.physical.plantEquipment.organized" ng-change="updateVRIO('physical', 'plantEquipment')" ng-disabled="formData.vrio.physical.plantEquipment.inimitable === 'no'" required>
+                                <option value="">Seleccione</option>
+                                <option value="yes">Sí</option>
+                                <option value="no">No</option>
+                                <option value="n/a">No aplica</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="max-w-full xl:ml-80 p-3">
+        <app-footer/>
+    </div>
+</body>

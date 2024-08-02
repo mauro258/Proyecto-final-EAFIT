@@ -1,118 +1,63 @@
-<div class="">
-  <div class="flex justify-center ">
-    <img src="https://www.eafit.edu.co/SiteCollectionImages/logo.png" class="max-w-36 ">
-  </div>
-  <div
-    class="flex justify-between gap-6  items-center min-w-80 bg-transparent transition-all px-2 py-1 bg-gradient-to-br from-gray-800 to-gray-900  hover:bg-white/10  text-white shadow-none rounded-xl ">
-    <div class="capitalize  ">
-      <nav aria-label="breadcrumb" class="w-max ">
-        <ol class="flex items-center bg-opacity-60 rounded-md bg-transparent p-0 transition-all">
-          <li
-            class="flex content-around text-blue-gray-900 antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-light-blue-500">
-            <a routerLink="/landing-page" class="flex items-center">
-              <p
-                class="block items-center antialiased font-sans text-sm leading-normal  text-white font-normal opacity-50 transition-all hover:text-blue-500 hover:opacity-100">
-                Estramypime</p>
 
-            </a>
-            <span
-              class="text-gray-500 text-sm antialiased font-sans font-normal leading-normal mx-2 pointer-events-none select-none">
-              | </span>
-          </li>
-          <li
-            class="block text-white antialiased font-sans text-sm font-normal leading-normal cursor-pointer transition-colors duration-300 hover:text-blue-500">
-            <p class="block antialiased font-sans text-sm leading-normal text-blue-gray-900 font-normal"> {{title}}</p>
-          </li>
-        </ol>
-      </nav>
-    </div>
-    <div class="flex flex-col items-center sm:flex-row">
-      <button class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 
-      disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-500 
-      hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 grid xl:hidden" type="button">
-        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-            stroke-width="3" class="h-6 w-6 text-blue-gray-500">
-            <path fill-rule="evenodd"
-              d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </span>
+<header class='flex shadow-lg py-4 px-4 rounded-md sm:px-10 bg-transparent font-[sans-serif] min-h-[70px] tracking-wide relative z-50'>
+  <div class='flex flex-wrap items-center justify-between gap-4 w-full'>
+    <a href="javascript:void(0)"
+      class="lg:absolute max-lg:left-10 lg:top-2/4 lg:left-2/4 lg:-translate-x-1/2 lg:-translate-y-1/2"><img
+        src="https://www.eafit.edu.co/SiteCollectionImages/logo.png" alt="logo" class='w-36' />
+    </a>
+
+    <div id="collapseMenu"
+      class='max-lg:hidden lg:!block max-lg:w-full max-lg:fixed max-lg:before:fixed max-lg:before:bg-black max-lg:before:opacity-50 max-lg:before:inset-0 max-lg:before:z-50'>
+      <button id="toggleClose" class='lg:hidden fixed top-2 right-4 z-[100] rounded-full bg-white p-3'>
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 fill-black" viewBox="0 0 320.591 320.591">
+          <path
+            d="M30.391 318.583a30.37 30.37 0 0 1-21.56-7.288c-11.774-11.844-11.774-30.973 0-42.817L266.643 10.665c12.246-11.459 31.462-10.822 42.921 1.424 10.362 11.074 10.966 28.095 1.414 39.875L51.647 311.295a30.366 30.366 0 0 1-21.256 7.288z"
+            data-original="#000000"></path>
+          <path
+            d="M287.9 318.583a30.37 30.37 0 0 1-21.257-8.806L8.83 51.963C-2.078 39.225-.595 20.055 12.143 9.146c11.369-9.736 28.136-9.736 39.504 0l259.331 257.813c12.243 11.462 12.876 30.679 1.414 42.922-.456.487-.927.958-1.414 1.414a30.368 30.368 0 0 1-23.078 7.288z"
+            data-original="#000000"></path>
+        </svg>
       </button>
-      <div>
-        <a routerLink="/register">
-          <button class="middle none font-sans font-bold center  transition-all disabled:opacity-50 disabled:shadow-none 
-      disabled:pointer-events-none text-sm py-3 rounded-lg 
-       text-white hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 items-center gap-1 px-4 xl:flex" type="button">
-            Regístrarse </button>
-          <!--       <button
-      class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none 
-      disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 grid xl:hidden"
-      type="button">
-      <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-          class="h-5 w-5 text-blue-gray-500">
+
+      <ul
+        class='lg:flex lg:gap-x-5 max-lg:space-y-3 max-lg:fixed max-lg:bg-white max-lg:w-1/2 max-lg:min-w-[300px] max-lg:top-0 max-lg:left-0 max-lg:p-6 max-lg:h-full max-lg:shadow-md max-lg:overflow-auto z-50'>
+        <li class='mb-6 hidden max-lg:block'>
+          <a href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" class='w-36' />
+          </a>
+        </li>
+        <li class='max-lg:border-b max-lg:py-3 px-3'>
+          <a href='/landing-page'
+            class='hover:text-[#007bff] text-[#000066] block font-semibold text-[15px]'>Inicio</a>
+        </li>
+        <li class='max-lg:border-b max-lg:py-3 px-3'><a href='/dashboard'
+            class='hover:text-[#007bff] text-[#000066] block font-semibold text-[15px]'>Seguimiento</a>
+        </li>
+        <li class='max-lg:border-b max-lg:py-3 px-3'><a href='/client-portal'
+          class='hover:text-[#007bff] text-[#000066] block font-semibold text-[15px]'>Diagnóstico</a>
+      </li>
+       </ul>
+    </div>
+
+    <div class='flex items-center ml-auto space-x-6'>
+      <button class='font-semibold text-[15px] border-none outline-none transition duration-100 ease-in-out transform hover:-translate-x hover:scale-105'><a routerLink="/login"
+          class='text-[#000066] '>Identificarse</a></button>
+          <a routerLink="/register">
+          <button
+        class='px-4 py-2 text-sm rounded-md font-bold text-white border-2  border-gray-900 
+         bg-gray-800 transition duration-100 ease-in-out transform hover:-translate-x hover:scale-105'>
+         Registrarse</button>
+        </a>
+
+      <button id="toggleOpen" class='lg:hidden'>
+        <svg class="w-7 h-7" fill="#333" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd"
-            d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
             clip-rule="evenodd"></path>
         </svg>
-      </span>
-    </button> -->
-        </a>
-      </div>
-      <span
-      class="text-gray-500 text-sm antialiased font-sans font-normal leading-normal mx-2 pointer-events-none select-none">
-      | </span>
-      <div>
-        <a routerLink="/login">
-          <button class="middle none font-sans font-bold center  transition-all disabled:opacity-50 disabled:shadow-none 
-        disabled:pointer-events-none text-sm py-3 rounded-lg 
-         text-white hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 items-center gap-1 px-4 xl:flex"
-            type="button">
-            Identificarse </button>
-          <!--       <button
-        class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none 
-        disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30 grid xl:hidden"
-        type="button">
-        <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-            class="h-5 w-5 text-blue-gray-500">
-            <path fill-rule="evenodd"
-              d="M18.685 19.097A9.723 9.723 0 0021.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 003.065 7.097A9.716 9.716 0 0012 21.75a9.716 9.716 0 006.685-2.653zm-12.54-1.285A7.486 7.486 0 0112 15a7.486 7.486 0 015.855 2.812A8.224 8.224 0 0112 20.25a8.224 8.224 0 01-5.855-2.438zM15.75 9a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
-              clip-rule="evenodd"></path>
-          </svg>
-        </span>
-      </button> -->
-        </a>
-      </div>
-      <div>
-        <a routerLink="/dashboard">
-          <button
-            class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30"
-            type="button">
-            <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                class="h-5 w-5 text-blue-gray-500">
-                <path fill-rule="evenodd"
-                  d="M11.078 2.25c-.917 0-1.699.663-1.85 1.567L9.05 4.889c-.02.12-.115.26-.297.348a7.493 7.493 0 00-.986.57c-.166.115-.334.126-.45.083L6.3 5.508a1.875 1.875 0 00-2.282.819l-.922 1.597a1.875 1.875 0 00.432 2.385l.84.692c.095.078.17.229.154.43a7.598 7.598 0 000 1.139c.015.2-.059.352-.153.43l-.841.692a1.875 1.875 0 00-.432 2.385l.922 1.597a1.875 1.875 0 002.282.818l1.019-.382c.115-.043.283-.031.45.082.312.214.641.405.985.57.182.088.277.228.297.35l.178 1.071c.151.904.933 1.567 1.85 1.567h1.844c.916 0 1.699-.663 1.85-1.567l.178-1.072c.02-.12.114-.26.297-.349.344-.165.673-.356.985-.57.167-.114.335-.125.45-.082l1.02.382a1.875 1.875 0 002.28-.819l.923-1.597a1.875 1.875 0 00-.432-2.385l-.84-.692c-.095-.078-.17-.229-.154-.43a7.614 7.614 0 000-1.139c-.016-.2.059-.352.153-.43l.84-.692c.708-.582.891-1.59.433-2.385l-.922-1.597a1.875 1.875 0 00-2.282-.818l-1.02.382c-.114.043-.282.031-.449-.083a7.49 7.49 0 00-.985-.57c-.183-.087-.277-.227-.297-.348l-.179-1.072a1.875 1.875 0 00-1.85-1.567h-1.843zM12 15.75a3.75 3.75 0 100-7.5 3.75 3.75 0 000 7.5z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </span>
-          </button>
-          <button aria-expanded="false" aria-haspopup="menu" id=":r2:"
-            class="relative middle none font-sans font-medium text-center uppercase transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none w-10 max-w-[40px] h-10 max-h-[40px] rounded-lg text-xs text-gray-500 hover:bg-blue-gray-500/10 active:bg-blue-gray-500/30"
-            type="button">
-            <span class="absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"
-                class="h-5 w-5 text-blue-gray-500">
-                <path fill-rule="evenodd"
-                  d="M5.25 9a6.75 6.75 0 0113.5 0v.75c0 2.123.8 4.057 2.118 5.52a.75.75 0 01-.297 1.206c-1.544.57-3.16.99-4.831 1.243a3.75 3.75 0 11-7.48 0 24.585 24.585 0 01-4.831-1.244.75.75 0 01-.298-1.205A8.217 8.217 0 005.25 9.75V9zm4.502 8.9a2.25 2.25 0 104.496 0 25.057 25.057 0 01-4.496 0z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </span>
-          </button>
-        </a>
+      </button>
+      <div id="collapseMenu" style="display: none;">
       </div>
     </div>
   </div>
-</div>
+</header>
+

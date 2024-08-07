@@ -41,7 +41,7 @@
       </div>
   
       <div class='flex items-center ml-auto space-x-6'>
-        <button class='font-semibold text-[15px] border-none outline-none transition duration-100 ease-in-out transform hover:-translate-x hover:scale-105'><a routerLink="/login"
+        <button class='font-semibold text-[15px] border-none outline-none transition duration-100 ease-in-out transform hover:-translate-x hover:scale-105'><a 
             class='text-[#000066] '>Logueado</a></button>
             <a routerLink="/register">
             <button
@@ -60,16 +60,16 @@
 
         <div *ngIf="isMenuVisible" class=" lg:hidden bg-gradient-to-br from-gray-800 to-gray-900  p-3   text-white absolute right-10 z-50 mt-2 top-16 ">
             <div class=" flex flex-col gap-5 ">
-                <a (click)="onSelect('Inicio')"  class="hover:bg-white/10 transition duration-300 rounded px-3" routerLink="/client-portal">
+                <a (click)="onSelect('Inicio')"  class="hover:bg-white/20 transition duration-300 rounded px-3" routerLink="/client-portal">
                     Inicio
                 </a>
-                <a (click)="onSelect('DiligenciarElFormulario')" class="hover:bg-white/10 transition duration-300 rounded px-3"  routerLink="/client-form">
+                <a (click)="onSelect('DiligenciarElFormulario')" class="hover:bg-white/20 transition duration-300 rounded px-3"  routerLink="/client-form">
                     Diligenciar El Formulario
                 </a>
-                <a class="hover:bg-white/10 transition duration-300 rounded px-3"  href="https://editorial.eafit.edu.co/index.php/editorial/catalog/book/195">
+                <a (click)="onSelect('DescargaLibro')" class="hover:bg-white/20 transition duration-300 rounded px-3"  href="https://editorial.eafit.edu.co/index.php/editorial/catalog/book/195" target="_blank">
                     Descargar Libro
                 </a>             
-                <a class="hover:bg-white/10 transition duration-300 rounded px-3"  href="landing-page">
+                <a class="hover:bg-white/20 transition duration-300 rounded px-3"  href="landing-page">
                     Cerrar Sesión
                 </a>
             </div>

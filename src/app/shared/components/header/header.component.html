@@ -48,13 +48,35 @@
          Registrarse</button>
         </a>
 
-      <button id="toggleOpen" class='lg:hidden'>
+      <button id="toggleOpen" class='lg:hidden flex flex-col relative' (click)="toggleMenu()">
         <svg class="w-7 h-7" fill="#333" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <path fill-rule="evenodd"
             d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
             clip-rule="evenodd"></path>
         </svg>
       </button>
+
+      <div *ngIf="isMenuVisible" class="bg-gradient-to-br from-gray-800 to-gray-900  p-3   text-white absolute right-20 z-50 mt-2 top-16">
+        <div class=" flex flex-col gap-5 ">
+            
+            <a (click)="onSelect('PanelDeSeguimiento')"  class="hover:bg-white/20 transition duration-300 rounded px-3"  routerLink="/dashboard">
+                Panel De Seguimiento
+            </a>
+            <a (click)="onSelect('Perfiles')"  class="hover:bg-white/20 transition duration-300 rounded px-3"  routerLink="/profile">
+                Perfiles
+            </a>
+            <a (click)="onSelect('Registros')"  class="hover:bg-white/20 transition duration-300 rounded px-3"  routerLink="/tables">
+                Registros</a>
+            <a (click)="onSelect('DescargaLibro')" class="hover:bg-white/20 transition duration-300 rounded px-3"  href="https://editorial.eafit.edu.co/index.php/editorial/catalog/book/195" target="_blank">
+                Descargar Libro
+            </a>
+            <a class="hover:bg-white/20 transition duration-300 rounded px-3"  href="landing-page">
+                Cerrar Sesión
+            </a>
+        </div>
+      </div>
+
+
       <div id="collapseMenu" style="display: none;">
       </div>
     </div>

@@ -8,6 +8,7 @@ import LayoutComponent from './shared/components/layout/layout.component';
 import { LandingpageComponent } from './business/landing-page/landing-page.component';
 import { ClientPortalComponent } from './business/client/client-portal/client-portal.component';
 import { ClientFormComponent } from './business/client/client-form/client-form.component';
+import { ClientLayoutComponent } from './business/client/client-layout/client-layout.component';
 
 export const routes: Routes = [
   {
@@ -22,14 +23,7 @@ export const routes: Routes = [
     path: 'register',
     component: RegisterComponent
   },
-  {
-    path: 'client-portal',
-    component: ClientPortalComponent
-  },
-  {
-    path: 'client-form',
-    component: ClientFormComponent,
-  },
+  
   {
     path: '',
     redirectTo: 'landing-page',
@@ -52,6 +46,21 @@ export const routes: Routes = [
         component: TablesComponent
       },
     ],
+  },
+  {
+    path: '',
+    component: ClientLayoutComponent,
+    children: [
+      {
+       path: 'client-portal',
+       component: ClientPortalComponent 
+      },
+      {
+        path: 'client-form',
+        component: ClientFormComponent,
+      },
+    ],
+    
   },
   {
     path: '**',

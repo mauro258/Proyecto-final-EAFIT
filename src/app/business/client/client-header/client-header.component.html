@@ -24,19 +24,7 @@
             <a href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" class='w-36' />
             </a>
           </li>
-
-     <!-- 
-          <li class='max-lg:border-b max-lg:py-3 px-3'>
-            <a href='/landing-page'
-              class='hover:text-[#007bff] text-[#000066] block font-semibold text-[15px]'>Inicio</a>
-          </li>
-          <li class='max-lg:border-b max-lg:py-3 px-3'><a href='/dashboard'
-              class='hover:text-[#007bff] text-[#000066] block font-semibold text-[15px]'>Seguimiento</a>
-          </li>
-          <li class='max-lg:border-b max-lg:py-3 px-3'><a href='/client-portal'
-            class='hover:text-[#007bff] text-[#000066] block font-semibold text-[15px]'>Diagnóstico</a>
-        </li>
-    -->
+   
          </ul>
       </div>
   
@@ -58,7 +46,7 @@
           </svg>
         </button>
 
-        <div *ngIf="isMenuVisible" class=" lg:hidden bg-gradient-to-br from-gray-800 to-gray-900  p-3   text-white absolute right-10 z-50 mt-2 top-16 ">
+        <div *ngIf="isMenuVisible" class=" lg:hidden bg-gradient-to-br from-gray-800 to-gray-900  p-3 rounded  text-white absolute right-10 z-50 mt-2 top-16 ">
             <div class=" flex flex-col gap-5 ">
                 <a (click)="onSelect('Inicio')"  class="hover:bg-white/20 transition duration-300 rounded px-3" routerLink="/client-portal">
                     Inicio
